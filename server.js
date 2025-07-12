@@ -44,6 +44,9 @@ mongoose.connect(process.env.MONGO_URI)
 app.use('/api/auth', authRoutes);
 app.use('/api/parcels', parcelRoutes);
 app.use('/api/admin', adminRoutes);
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
 
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => console.log(`Server listening on ${PORT}`));
